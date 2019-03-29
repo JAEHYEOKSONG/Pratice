@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+	<style>
+	td{
+		text-align : center;
+		<!-- 중앙정렬 -->
+	}
+
+	</style>
+	
+	
+	
+	<script>
+	
+	
+	var num = 0;
+	var test;
+	var name2;
+		//flag가 이미지사진번호 , name 해당멤버이름
+		function fnPicture(flag,name){
+				//미나일경우 flag =1 , name ='미나';
+				
+			test = flag;	//test =1
+			name2= name;	//name2 = '미나'
+			
+			
+			if(num == 0){
+				//id속성값이 picture인 태그의 값을 들고옴
+			var s = document.getElementById("picture"+flag);
+				//innerHTML이란? -> 기존태그의 값을 지우고 값을 넣어주는 자바스크립트메서드;
+			s.innerHTML="<img src='"+flag+".jpg'></img>";
+				num =1;
+				
+				// 사진 on -> 1 , 사진 off -> 0 해당 멤버를 구하는 수는 모두 홀수다 
+			}else if( (num+flag)%2 ==0){
+				var s = document.getElementById("picture"+flag);
+				s.innerHTML= name2+"사진";
+				num = 0;
+			}
+			
+			
+		}
+	</script>
+		<title>트와이스의 사진</title>
+		<meta charset="utf-8">
+	</head>
+	<body> 
+		<h1 align="center">트와이스 맴버</h1>
+		<table border="1" align="center" width="700">
+				<tr>
+				<th>이름</th>
+				<th>사진</th>
+			</tr>
+			<tr>
+				<td ><a href ="https://www.youtube.com/watch?v=xTzq2PrcxHo" target="_blank"title="미나직캠영상">미나 영상</a></td>    
+				<td id="picture1" onclick="fnPicture(1,'미나');" align="center">미나사진</td>
+			</tr>     
+			<tr>
+				<td><a href ="https://www.youtube.com/watch?v=jNGuk59UWeI" target="_blank" title="사나직캠영상">사나영상</a></td>
+				<td id="picture3" onclick="fnPicture(3,'사나');" align="center">사나사진</td>
+			</tr>
+			<tr>
+				<td><a href ="https://www.youtube.com/watch?v=WmPh0APDnww"target="_blank"title="다현직캠영상">다현영상</a></td>
+				<td id="picture5" onclick="fnPicture(5,'다현');" align="center">다현사진</td>
+			</tr>
+			
+			
+		</table>
+	
+	</body>
+</html>
